@@ -1,0 +1,11 @@
+//global imports
+@import "./variables";
+@import "./mixins";
+
+//component imports
+@import "../../components/Home/home";
+@import "../../components/Navigation/navigation";
+@import "../../components/Services/services";
+@import "../../components/DividerDecoration/dividerDecoration";
+@import "../../components/Benefits/benefits";
+@import "../../components/Contacts/contacts";

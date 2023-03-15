@@ -1,0 +1,53 @@
+.hero-area {
+  background-image: url(../../assets/imgs/main.jpg);
+  background-color: #f1f1f1;
+  color: #ffffff;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.overlay {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+
+    @include largeScreen() {
+      min-height: 100%;
+    }
+  }
+}
+
+.full-height {
+  min-height: inherit;
+  @include largeScreen() {
+    min-height: 100vh;
+  }
+}
+
+.content {
+  position: relative;
+
+  .text {
+    &-container {
+      padding: 7rem 0;
+    }
+    &-title {
+      font-size: 3rem;
+      @include largeScreen() {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+.home-decoration {
+  width: 200px;
+  margin: auto;
+}

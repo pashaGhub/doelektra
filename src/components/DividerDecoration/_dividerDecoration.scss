@@ -1,0 +1,29 @@
+// decoration in home section
+.divider-circle {
+  width: 100%;
+  border: 1px solid $mainContentColor;
+  opacity: 0.8;
+  position: relative;
+  display: inline-block;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: $mainContentColor;
+    top: -9px;
+    opacity: 0.8;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    right: 49%;
+  }
+  &::after {
+    left: 49%;
+  }
+}

@@ -1,0 +1,20 @@
+$mobileScreen: 767px;
+$tabletScreen: 991px;
+$largeMinWidth: 992px;
+
+@mixin mobile() {
+  @media screen and (max-width: $mobileScreen) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (min-width: $tabletScreen) and (max-width: $tabletScreen) {
+    @content;
+  }
+}
+@mixin largeScreen() {
+  @media screen and (min-width: $largeMinWidth) {
+    @content;
+  }
+}

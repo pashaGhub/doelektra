@@ -1,0 +1,57 @@
+.navbar-toggler {
+  background: #fff;
+}
+
+.navbar-nav {
+  text-align: center;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 0.2rem 1rem;
+
+  &:hover {
+    color: rgb(188, 188, 188);
+  }
+}
+
+.active {
+  color: #fff;
+  font-weight: 900;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.navbar {
+  &-custom {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  // styles of navbar while scrolling
+  &-fixed {
+    padding: 12px 10px;
+    background: #fff;
+    color: $mainDark !important;
+    box-shadow: 0px 1px 27px -3px rgb(0 0 0 / 20%);
+
+    .navbar-brand {
+      color: $mainDark;
+    }
+
+    .nav-link {
+      color: $mainDark;
+    }
+    .active {
+      color: $mainDark;
+    }
+  }
+}
