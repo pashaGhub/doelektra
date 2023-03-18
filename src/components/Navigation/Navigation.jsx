@@ -22,7 +22,11 @@ const Navigation = () => {
     <Navbar
       expand="lg"
       fixed="top"
-      className={navBackground ? "navbar-custom navbar-fixed" : "navbar-custom"}
+      className={
+        navBackground
+          ? "navbar-custom navbar-fixed"
+          : "navbar-custom navbar-top"
+      }
     >
       <Container>
         <Navbar.Brand href="#home" className="navbar-brand">
@@ -31,7 +35,7 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse
           id="responsive-navbar-nav"
-          className="justify-content-end"
+          className="test justify-content-end"
         >
           <Nav>
             <Nav.Link>

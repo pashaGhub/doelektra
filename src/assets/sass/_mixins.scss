@@ -18,3 +18,9 @@ $largeMinWidth: 992px;
     @content;
   }
 }
+
+@mixin smallScreen() {
+  @media screen and (max-width: $tabletScreen) {
+    @content;
+  }
+}
