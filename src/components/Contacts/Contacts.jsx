@@ -1,10 +1,35 @@
-import { Container, Form, Button, Row, Col } from "react-bootstrap";
+import { useRef, useState } from "react";
+import { Container, Form, Button, Row, Col, Alert } from "react-bootstrap";
 import DividerDecoration from "../DividerDecoration/DividerDecoration";
+import emailjs from "@emailjs/browser";
 
-const Benefits = () => {
+const Contacts = () => {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const form = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+    setSuccess(false);
+    setError(false);
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_qxw0066",
+        "template_251zcxo",
+        form.current,
+        "X6bKzeD5795uCvYXM"
+      )
+      .then(
+        (result) => {
+          setSuccess(true);
+        },
+        (error) => {
+          setError(true);
+        }
+      )
+      .finally(() => setLoading(false));
   };
   return (
     <div id="contacts" className="contacts">
@@ -23,17 +48,30 @@ const Benefits = () => {
             </div>
           </Col>
           <Col xs={12} lg={8}>
-            <Form onSubmit={handleSubmit} className="bg-light p-4">
+            <Form ref={form} onSubmit={handleSubmit} className="bg-light p-4">
+              {loading && <Alert variant="primary">Siunčiama...</Alert>}
+              {!loading && success && (
+                <Alert variant="success">
+                  Žinutė išsiųsta, ačiū už kontaktą!
+                </Alert>
+              )}
+              {!loading && error && (
+                <Alert variant="danger">
+                  Įvyko klaida :( bandykite dar kartą
+                </Alert>
+              )}
               <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>Vardas</Form.Label>
-                <Form.Control type="text" placeholder="Vardas" />
+                <Form.Label>Tema</Form.Label>
+                <Form.Control type="text" placeholder="Tema" name="title" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Elektroninis paštas</Form.Label>
-                <Form.Control type="email" placeholder="Elektroninis paštas" />
-                {/* <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text> */}
+                <Form.Control
+                  type="email"
+                  placeholder="Elektroninis paštas"
+                  name="email"
+                  required
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicMessage">
                 <Form.Label>Jūsų žinutė</Form.Label>
@@ -41,6 +79,7 @@ const Benefits = () => {
                   as="textarea"
                   rows={3}
                   placeholder="Jūsų žinutė"
+                  name="message"
                 />
               </Form.Group>
               <Button type="submit">Siųsti</Button>
@@ -52,4 +91,4 @@ const Benefits = () => {
   );
 };
 
-export default Benefits;
+export default Contacts;
