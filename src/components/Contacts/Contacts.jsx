@@ -42,7 +42,7 @@ const Contacts = () => {
           <Col xs={12} lg={4}>
             <div className="bg-light contacts-info p-4">
               <div>Telefonas</div>
-              <p>+370 60 00 0000</p>
+              <p>+370 646 33945</p>
               <div>Elektroninis paštas</div>
               <p>info@doelektra.lt</p>
             </div>
