@@ -1,13 +1,7 @@
-import { useEffect } from "react";
-import ReactGA from "react-ga";
 import { Container, Row, Col } from "react-bootstrap";
 import DividerDecoration from "../DividerDecoration/DividerDecoration";
 
 const Home = () => {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
-
   return (
     <div id="home" className="hero-area overlay">
       <Container className="content">

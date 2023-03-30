@@ -1,14 +1,10 @@
-import { useRef, useState, useEffect } from "react";
-import ReactGA from "react-ga";
+import { useRef, useState } from "react";
+
 import { Container, Form, Button, Row, Col, Alert } from "react-bootstrap";
 import DividerDecoration from "../DividerDecoration/DividerDecoration";
 import emailjs from "@emailjs/browser";
 
 const Contacts = () => {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
-
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
