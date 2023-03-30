@@ -8,7 +8,7 @@ import Contacts from "./components/Contacts/Contacts";
 
 const App = () => {
   useEffect(() => {
-    if (window.GA_INITIALIZES) {
+    if (!window.GA_INITIALIZES) {
       ReactGA.initialize("G-26R5Z8MJSL");
       window.GA_INITIALIZES = true;
     }
