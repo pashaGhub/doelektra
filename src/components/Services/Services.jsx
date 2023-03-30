@@ -1,6 +1,12 @@
+import { useEffect } from "react";
+import ReactGA from "react-ga";
 import { Card, Row, Col, Container } from "react-bootstrap";
 
 const Services = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <div className="bg-light">
       <Container id="services" className="services d-grid gap-3">
