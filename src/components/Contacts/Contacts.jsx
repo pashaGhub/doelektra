@@ -53,7 +53,7 @@ const Contacts = () => {
               {loading && <Alert variant="primary">Siunčiama...</Alert>}
               {!loading && success && (
                 <Alert variant="success">
-                  Žinutė išsiųsta, ačiū už kontaktą!
+                  Žinutė išsiųsta, ačiū! Atsakysime artimiausiu metu ;)
                 </Alert>
               )}
               {!loading && error && (
