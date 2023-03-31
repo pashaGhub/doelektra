@@ -9,11 +9,12 @@ import Contacts from "./components/Contacts/Contacts";
 const App = () => {
   useEffect(() => {
     if (!window.GA_INITIALIZES) {
+      console.log("here");
       ReactGA.initialize("G-26R5Z8MJSL");
       window.GA_INITIALIZES = true;
     }
     console.log(window.location.pathname + window.location.search);
-    ReactGA.send({ hitType: "pageview", page: "/", title: "Custom Title" });
+    ReactGA.send({ hitType: "pageview", page: "/", title: "doElektraGA" });
   }, []);
   return (
     <div className="App">
