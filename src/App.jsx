@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import Home from "./components/Home/Home";
 import Services from "./components/Services/Services";
 import Navigation from "./components/Navigation/Navigation";
@@ -13,7 +13,7 @@ const App = () => {
       window.GA_INITIALIZES = true;
     }
     console.log(window.location.pathname + window.location.search);
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.send({ hitType: "pageview", page: "/", title: "Custom Title" });
   }, []);
   return (
     <div className="App">
