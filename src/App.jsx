@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import ReactGA from "react-ga4";
+import { Helmet } from "react-helmet";
+//components
 import Home from "./components/Home/Home";
 import Services from "./components/Services/Services";
 import Navigation from "./components/Navigation/Navigation";
@@ -18,6 +20,9 @@ const App = () => {
   }, []);
   return (
     <div className="App">
+      <Helmet>
+        <link rel="sitemap" type="application/xml" href="./sitemap.xml" />
+      </Helmet>
       <Navigation />
       <Home />
       <Services />
